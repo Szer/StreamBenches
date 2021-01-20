@@ -8,7 +8,7 @@ namespace StreamBenches.CSharp
 {
     public static class BlockingChannels
     {
-        record WorkItem(string Cluster, ICslQueryProvider Provider, DateTime Start, DateTime End);
+        private record WorkItem(string Cluster, ICslQueryProvider Provider, DateTime Start, DateTime End);
         
         public static void Impl(Tuple<string, ICslQueryProvider>[] kustoClients)
         {
