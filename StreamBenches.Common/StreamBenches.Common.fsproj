@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Include="Common.fs" />
+        <Compile Include="Hopac.fs" />
+        <Compile Include="Tasks.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Hopac" Version="0.5.0" />
+      <PackageReference Include="Microsoft.Azure.Kusto.Data" Version="9.0.6" />
+      <PackageReference Include="Ply" Version="0.3.1" />
+    </ItemGroup>
+
+</Project>
