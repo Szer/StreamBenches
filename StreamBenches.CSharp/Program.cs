@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            BlockingChannels.Impl(Data.Real.kustoClients);
+            BlockingChannels.Impl(Data.Fake.kustoClients);
         }
     }
 }

@@ -1,2 +1,2 @@
-﻿StreamBenches.Data.Real.kustoClients
+﻿StreamBenches.Data.Fake.kustoClients
 |> StreamBenches.FSharp.HopacChannels.impl
