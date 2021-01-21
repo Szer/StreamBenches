@@ -3,12 +3,17 @@
     <PropertyGroup>
         <OutputType>Exe</OutputType>
         <TargetFramework>net5.0</TargetFramework>
-        <ServerGarbageCollection>true</ServerGarbageCollection>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\StreamBenches.Common\StreamBenches.Common.fsproj" />
       <ProjectReference Include="..\StreamBenches.Data\StreamBenches.Data.fsproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="System.Interactive.Async" Version="5.0.0" />
+      <PackageReference Include="System.Reactive.Linq" Version="5.0.0" />
+      <PackageReference Include="Trill" Version="2020.12.1.2" />
     </ItemGroup>
 
 </Project>

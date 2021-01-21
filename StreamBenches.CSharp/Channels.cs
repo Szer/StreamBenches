@@ -25,7 +25,7 @@ namespace StreamBenches.CSharp
                 }
             });
 
-            var entriesChannel = Channel.CreateUnbounded<(string cluster, DateTime start, string[] logs)>(new UnboundedChannelOptions { SingleReader = true });
+            var entriesChannel = Channel.CreateBounded<(string cluster, DateTime start, string[] logs)>(new BoundedChannelOptions(10) { SingleReader = true });
             for (int i = 0; i < parallelism; i++)
             {
                 _ = Task.Run(async () =>
