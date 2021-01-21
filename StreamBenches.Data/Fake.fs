@@ -12,7 +12,9 @@ type FakeDataReader() =
     let mutable rowsLeft = 100_000L
     
     interface IDataReader with
-        member _.Read() = Interlocked.Decrement &rowsLeft >= 0L
+        member _.Read() =
+            Thread.SpinWait 100
+            Interlocked.Decrement &rowsLeft >= 0L
         member this.Close() = failwith "todo"
         member this.Depth = failwith "todo"
         member this.GetSchemaTable() = failwith "todo"

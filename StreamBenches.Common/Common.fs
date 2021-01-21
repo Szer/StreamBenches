@@ -1,6 +1,7 @@
 ﻿module StreamBenches.Common
 
 open System
+open System.Collections.Concurrent
 open System.Text
 open Kusto.Data.Common
 open FSharp.Control.Tasks
@@ -64,6 +65,8 @@ let initialOffset = TimeSpan.FromMinutes 15.
 let parallelism = Environment.ProcessorCount * 2
 
 let perfDate = DateTime.UtcNow
+let mutable totalRows = 0L
+let lagDict = ConcurrentDictionary<string, double * DateTime>()
 
 let dateQuants =
     seq {

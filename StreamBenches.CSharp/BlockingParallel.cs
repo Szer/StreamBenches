@@ -6,7 +6,7 @@ using static StreamBenches.Common;
 
 namespace StreamBenches.CSharp
 {
-    public static class BlockingChannels
+    public static class BlockingParallel
     {
         private record WorkItem(string Cluster, ICslQueryProvider Provider, DateTime Start, DateTime End);
         

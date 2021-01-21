@@ -8,9 +8,6 @@ open System.Threading.Tasks
 open FSharp.Control.Tasks
 open Common
 
-let mutable totalRows = 0L
-let lagDict = ConcurrentDictionary<string, double * DateTime>()
-
 let afterTask (db, start, allLines: string []) = task {
     do! File.AppendAllLinesAsync("result.txt", allLines)
     let now = DateTime.UtcNow
@@ -26,6 +23,7 @@ let afterTask (db, start, allLines: string []) = task {
 }
 
 let perfTask() = unitTask {
+    File.Delete "result.txt"
     Console.Clear()
     while true do
         Console.SetCursorPosition(0, 0);
